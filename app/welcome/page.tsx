@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { FaDrone } from 'react-icons/fa';
+import { FaHelicopter } from 'react-icons/fa'; // заменили FaDrone
 
 export default function WelcomePage() {
   return (
@@ -14,7 +14,7 @@ export default function WelcomePage() {
         className="max-w-2xl bg-white p-10 rounded-3xl shadow-xl text-center"
       >
         <div className="flex justify-center mb-4 text-blue-600 text-5xl">
-          <FaDrone />
+          <FaHelicopter />
         </div>
         <h1 className="text-4xl font-extrabold mb-4 text-gray-800">
           Добро пожаловать в HoverHub
