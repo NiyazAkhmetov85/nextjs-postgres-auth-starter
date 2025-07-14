@@ -1,8 +1,9 @@
-import type { AuthOptions, User } from "next-auth"
-import type { JWT } from "next-auth/jwt"
-import type { Session } from "next-auth"
+import type { NextAuthConfig } from "next-auth";
+import type { User } from "next-auth";
+import type { JWT } from "next-auth/jwt";
+import type { Session } from "next-auth";
 
-export const authConfig: Partial<AuthOptions> = {
+export const authConfig: Partial<NextAuthConfig> = {
   pages: {
     signIn: "/login",
   },
@@ -22,4 +23,4 @@ export const authConfig: Partial<AuthOptions> = {
       return session;
     },
   },
-}
+};
