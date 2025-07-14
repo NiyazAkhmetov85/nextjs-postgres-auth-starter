@@ -1,8 +1,3 @@
-import { redirect } from 'next/navigation'
-
-export default function Home() {
-  redirect('/welcome');
-}
 export default function WelcomePage() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center px-4 py-8 bg-gray-100">
