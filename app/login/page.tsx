@@ -1,38 +1,33 @@
-import Link from 'next/link';
-import { Form } from 'app/form';
-import { signIn } from 'app/auth';
-import { SubmitButton } from 'app/submit-button';
+'use client'
 
-export default function Login() {
+import { signIn } from 'next-auth/react'
+import { useSearchParams } from 'next/navigation'
+
+export default function LoginPage() {
+  const searchParams = useSearchParams()
+  const error = searchParams.get('error')
+
   return (
-    <div className="flex h-screen w-screen items-center justify-center bg-gray-50">
-      <div className="z-10 w-full max-w-md overflow-hidden rounded-2xl border border-gray-100 shadow-xl">
-        <div className="flex flex-col items-center justify-center space-y-3 border-b border-gray-200 bg-white px-4 py-6 pt-8 text-center sm:px-16">
-          <h3 className="text-xl font-semibold">Sign In</h3>
-          <p className="text-sm text-gray-500">
-            Use your email and password to sign in
+    <main className="min-h-screen flex flex-col items-center justify-center px-4 py-8 bg-gray-100">
+      <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-md">
+        <h1 className="text-2xl font-bold text-center mb-4 text-gray-800">Вход в аккаунт</h1>
+        <p className="text-sm text-gray-600 text-center mb-6">
+          Пожалуйста, войдите с помощью электронной почты.
+        </p>
+
+        {error && (
+          <p className="text-red-500 text-sm text-center mb-4">
+            Ошибка входа. Проверьте данные и попробуйте снова.
           </p>
-        </div>
-        <Form
-          action={async (formData: FormData) => {
-            'use server';
-            await signIn('credentials', {
-              redirectTo: '/protected',
-              email: formData.get('email') as string,
-              password: formData.get('password') as string,
-            });
-          }}
+        )}
+
+        <button
+          onClick={() => signIn('email')}
+          className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition"
         >
-          <SubmitButton>Sign in</SubmitButton>
-          <p className="text-center text-sm text-gray-600">
-            {"Don't have an account? "}
-            <Link href="/register" className="font-semibold text-gray-800">
-              Sign up
-            </Link>
-            {' for free.'}
-          </p>
-        </Form>
+          Войти по электронной почте
+        </button>
       </div>
-    </div>
-  );
+    </main>
+  )
 }
