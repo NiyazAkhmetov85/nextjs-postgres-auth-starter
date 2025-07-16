@@ -1,0 +1,12 @@
+{
+  "title": "Welcome to HoverHub",
+  "description": "Platform for ordering drone services",
+  "login": "Login",
+  "logout": "Logout",
+  "register": "Register",
+  "language": "Language",
+  "dashboard": "Dashboard",
+  "orders": "Orders",
+  "profile": "Profile",
+  "search": "Search"
+}
