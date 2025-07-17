@@ -1,6 +1,7 @@
 import NextAuth from "next-auth";
 import GitHubProvider from "next-auth/providers/github"; // пример, замени на свои
-import { partialConfig } from "./app/auth.config";
+import { partialConfig } from 'app/auth.config';
+
 
 const fullConfig = {
   ...partialConfig,
