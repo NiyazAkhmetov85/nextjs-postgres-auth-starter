@@ -5,7 +5,13 @@ import { initReactI18next } from 'react-i18next';
 import resourcesToBackend from 'i18next-resources-to-backend';
 import { getOptions } from './settings';
 
-const initI18next = async (lng: string, ns: string | string[] = 'common') => {
+const initI18next = async (
+  lngInput: string | string[],
+  nsInput: string | string[] = 'common'
+) => {
+  const lng = Array.isArray(lngInput) ? lngInput[0] : lngInput;
+  const ns = Array.isArray(nsInput) ? nsInput[0] : nsInput;
+
   if (!i18next.isInitialized) {
     await i18next
       .use(initReactI18next)
