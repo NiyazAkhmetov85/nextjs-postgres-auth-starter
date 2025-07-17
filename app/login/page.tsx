@@ -1,9 +1,10 @@
 'use client'
 
+import { Suspense } from 'react'
 import { signIn } from 'next-auth/react'
 import { useSearchParams } from 'next/navigation'
 
-export default function LoginPage() {
+function LoginForm() {
   const searchParams = useSearchParams()
   const error = searchParams.get('error')
 
@@ -29,5 +30,13 @@ export default function LoginPage() {
         </button>
       </div>
     </main>
+  )
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={<div className="text-center mt-10">Загрузка...</div>}>
+      <LoginForm />
+    </Suspense>
   )
 }
