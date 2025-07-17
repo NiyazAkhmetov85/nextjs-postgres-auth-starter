@@ -4,7 +4,18 @@ import { dir } from 'i18next';
 import { languages } from '../i18n/settings';
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
-// import { I18nProvider } from '@/i18n/I18nProvider'; // путь уточни по проекту
+import I18nProvider from '@/i18n/I18nProvider';
+
+export default function RootLayout({ children, params }: { children: React.ReactNode; params: { lng: string } }) {
+  return (
+    <html lang={params.lng}>
+      <body>
+        <I18nProvider>{children}</I18nProvider>
+      </body>
+    </html>
+  );
+}
+
 
 export const metadata: Metadata = {
   title: 'Next.js + Postgres Auth Starter',
