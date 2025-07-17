@@ -4,7 +4,8 @@ import { dir } from 'i18next';
 import { languages } from '../i18n/settings';
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
-import I18nProvider from '@/i18n/I18nProvider';
+// import I18nProvider from '@/i18n/I18nProvider';
+import { I18nProvider } from '@/i18n/I18nProvider'; 
 
 export const metadata: Metadata = {
   title: 'Next.js + Postgres Auth Starter',
