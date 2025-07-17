@@ -10,7 +10,8 @@
       "@/pages/*": ["pages/*"],
       "@/app/*": ["app/*"],
       "@/lib/*": ["lib/*"],
-      "@/styles/*": ["styles/*"]
+      "@/styles/*": ["styles/*"],
+      "@/i18n/*": ["i18n/*"]
     },
     "strict": true,
     "noImplicitAny": true,
