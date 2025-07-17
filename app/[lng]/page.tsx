@@ -1,5 +1,4 @@
 import initI18next from '../../i18n/server'
-import { useTranslation } from 'react-i18next'
 
 export default async function Page({ params }: { params: { lng: string } }) {
   const i18n = await initI18next(params.lng)
