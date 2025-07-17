@@ -3,8 +3,9 @@
 import i18next from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import resourcesToBackend from 'i18next-resources-to-backend';
-import { getOptions } from './settings'; // если ты используешь `getOptions`, подключи
+import { getOptions } from './settings';
 
+// Инициализация i18next
 i18next
   .use(initReactI18next)
   .use(
@@ -13,11 +14,10 @@ i18next
     )
   )
   .init({
-    ...getOptions(), // опционально: если хочешь централизованную конфигурацию
-    fallbackLng: 'en',
-    defaultNS: 'common',
-    supportedLngs: ['en', 'ru', 'kk'],
-    react: { useSuspense: true },
+    ...getOptions(), // централизованные настройки
+    react: {
+      useSuspense: true, // позволяет использовать <Suspense>
+    },
   });
 
 export default i18next;
