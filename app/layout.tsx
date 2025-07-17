@@ -4,6 +4,7 @@ import { GeistSans } from 'geist/font/sans';
 import { dir } from 'i18next';
 import { languages } from '../i18n/settings';
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 
 let title = 'Next.js + Postgres Auth Starter';
 let description =
@@ -33,8 +34,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang={params.lng} dir={dir(params.lng)}>
-      <body className={GeistSans.variable}>{children}</body>
+      <body className={GeistSans.variable}>
+        <Suspense fallback={<div>Loading...</div>}>
+          {children}
+        </Suspense>
+      </body>
     </html>
   );
 }
-
