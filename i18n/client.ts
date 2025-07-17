@@ -7,7 +7,7 @@ import resourcesToBackend from 'i18next-resources-to-backend';
 i18next
   .use(initReactI18next)
   .use(
-    resourcesToBackend((lng, ns) =>
+    resourcesToBackend((lng: string, ns: string) =>
       import(`../public/locales/${lng}/${ns}.json`)
     )
   )
