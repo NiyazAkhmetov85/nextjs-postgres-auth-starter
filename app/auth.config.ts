@@ -1,8 +1,6 @@
 import type { NextAuthConfig } from "next-auth";
-import type { User } from "next-auth";
-import type { Session } from "next-auth";
+import type { User, Session } from "next-auth";
 
-// Определяем тип JWT вручную, так как он больше не экспортируется из "next-auth/jwt"
 type JWT = {
   name?: string | null;
   email?: string | null;
@@ -15,7 +13,7 @@ type JWT = {
   id?: string;
 };
 
-export const authConfig: Partial<NextAuthConfig> = {
+export const partialConfig: Partial<NextAuthConfig> = {
   pages: {
     signIn: "/login",
   },
