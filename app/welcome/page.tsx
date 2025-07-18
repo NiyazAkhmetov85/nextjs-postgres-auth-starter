@@ -11,6 +11,9 @@ export default function WelcomePage() {
   const pathname = usePathname();
   const router = useRouter();
 
+  // 👉 Лог значения subtitle
+  console.log('subtitle:', t('subtitle'));
+
   const changeLanguage = (lng: string) => {
     const segments = pathname.split('/');
     segments[1] = lng;
