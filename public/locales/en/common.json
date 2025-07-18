@@ -1,6 +1,8 @@
 {
   "title": "Welcome to HoverHub",
-  "description": "Platform for ordering drone services",
+  "description": "A platform for drone service booking",
+  "subtitle": "Drones. Data. Decisions.",
+  "cta": "Get Started",
   "login": "Login",
   "logout": "Logout",
   "register": "Register",
