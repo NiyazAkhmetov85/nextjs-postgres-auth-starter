@@ -11,8 +11,6 @@ export default function WelcomePage() {
   const pathname = usePathname();
   const router = useRouter();
 
-  // 👉 Лог значения subtitle
-  console.log('subtitle:', t('subtitle'));
 
   const changeLanguage = (lng: string) => {
     const segments = pathname.split('/');
@@ -50,7 +48,6 @@ export default function WelcomePage() {
 
         <h1 className="text-4xl font-bold mb-4">{t('title')}</h1>
         <p className="text-lg mb-4">{t('description')}</p>
-        <p className="mb-6">{t('subtitle')}</p>
         <Link
           href={`/${i18n.language}/register`}
           className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-full transition"
